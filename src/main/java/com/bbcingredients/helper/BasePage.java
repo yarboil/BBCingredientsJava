@@ -1,8 +1,8 @@
 package com.bbcingredients.helper;
 
 
+import com.bbcingredients.pageobjects.FoodIngredients;
 import com.bbcingredients.pageobjects.FoodRecipe;
-import com.bbcingredients.pageobjects.HomePage;
 import com.bbcingredients.pageobjects.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,15 +23,15 @@ public class BasePage {
         return url;
     }
 
-    public HomePage navigateToHomePage(){
-        driver.get(baseUrl() + "/food/broccoli");
-        assertEquals("BBC - Food - Broccoli recipes", driver.getTitle());
-        return new HomePage(driver);
-    }
-
-    public FoodRecipe navigateToFoodPage(){
+    public FoodRecipe navigateToFoodRecipesPage(){
         driver.get(baseUrl() + "/food/recipes/easy_spaghetti_bolognese_93639");
         return new FoodRecipe(driver);
+    }
+
+    public FoodIngredients navigateToFoodIngredientsPage(){
+        driver.get(baseUrl() + "/food/broccoli");
+        assertEquals("BBC - Food - Broccoli recipes", driver.getTitle());
+        return new FoodIngredients(driver);
     }
 
     public LoginPage navigateToLoginPage(){

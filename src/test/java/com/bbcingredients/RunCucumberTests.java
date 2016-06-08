@@ -10,8 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/main/resources",
         plugin = {"pretty", "html:put"},
-        snippets = SnippetType.CAMELCASE,
-        tags = "@run-test"
+        snippets = SnippetType.CAMELCASE
 )
 public class RunCucumberTests {
 

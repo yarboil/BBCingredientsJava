@@ -13,21 +13,15 @@ public class YourFavouritesPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "h1.content-title__text")
-    public  WebElement favouriteItemsText;
-
     @FindBy(css = ".my-favourites-recipes__recipe-container")
     public WebElement recipeContainer;
 
     @FindBy(css = "button.favourites-drawer__update")
     public WebElement crossButton;
 
-    @FindBy(css = "span.favourites-drawer__button-text")
+    @FindBy(css = ".favourites-drawer__button-text")
     public WebElement favouritesRemoveButton;
 
     @FindBy(css = "#add-to-favourites-button")
     public WebElement addToFavouritesButton;
-
-    @FindBy(css = ".my-favourites-recipes__no-recipes")
-    public WebElement noRecipesText;
 }
