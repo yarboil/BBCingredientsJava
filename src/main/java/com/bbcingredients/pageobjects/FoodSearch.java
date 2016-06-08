@@ -20,13 +20,13 @@ public class FoodSearch extends BasePage {
     public WebElement articleList;
 
     @FindBys({
-       @FindBy(css = "#filter-results h3")
+            @FindBy(css = "#filter-results h3")
     })
     public List<WebElement> recipeFinder;
 
     @FindBys({
-       @FindBy(css = "#dishes-filters"),
-       @FindBy(css = "ul li")
+            @FindBy(css = "#dishes-filters"),
+            @FindBy(css = "ul li")
     })
     public List<WebElement> dishesFilter;
 

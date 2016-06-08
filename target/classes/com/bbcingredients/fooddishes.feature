@@ -1,7 +1,7 @@
 Feature: Food Dishes
 
   Background:
-    Given I am on food "broccoli" page
+    Given I am on food ingredients page
 
   Scenario: Food Information displayed
     Then I should see food image

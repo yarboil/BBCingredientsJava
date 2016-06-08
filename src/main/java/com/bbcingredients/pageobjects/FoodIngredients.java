@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends BasePage {
+public class FoodIngredients extends BasePage {
 
-    public HomePage(WebDriver driver){
+    public FoodIngredients(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver,this);
     }

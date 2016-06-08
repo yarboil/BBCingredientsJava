@@ -17,7 +17,7 @@ Feature: Food Recipes
     When I click your favourites button
     Then I should see recipe in favourites
 
-  @run-test
+  @run-style
   Scenario: Remove from favourites
     Given I am logged in
     And I am on Food recipe page
@@ -26,6 +26,4 @@ Feature: Food Recipes
     When I click your favourites button
     And I click cross button
     And I click remove button
-    Then I should see text "Start adding things wherever you see..."
-
-
+    Then I should see add to favourites button
