@@ -9,9 +9,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/main/resources",
-        plugin = {"pretty", "html:/Users/Yarboi/JavaProjects/peppertaponline/BBCingredients/src/test/java/com/bbcingredients/reports/reports.html", "junit:target/reports/junit_report.xml"},
-        snippets = SnippetType.CAMELCASE,
-        tags = "@run"
+        plugin = {"pretty", "html:target/cucumber", "junit:target/reports/junit_report.xml"},
+        snippets = SnippetType.CAMELCASE
 )
 public class RunCucumberTests {
 

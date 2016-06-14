@@ -1,3 +1,4 @@
+@run
 Feature: Food Dishes
 
   Background:
