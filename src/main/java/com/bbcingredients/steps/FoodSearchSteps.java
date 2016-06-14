@@ -22,7 +22,6 @@ public class FoodSearchSteps {
     public void setUp(){
         driver = new DriverFactory().getDriver();
         wait = new WebDriverWait(driver, 30);
-
     }
 
     @After

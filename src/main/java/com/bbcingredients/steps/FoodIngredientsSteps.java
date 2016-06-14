@@ -3,6 +3,7 @@ package com.bbcingredients.steps;
 import com.bbcingredients.helper.BasePage;
 import com.bbcingredients.helper.DriverFactory;
 import com.bbcingredients.pageobjects.*;
+import com.bbcingredients.util.PropertyReader;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -21,7 +22,7 @@ public class FoodIngredientsSteps  {
     @Before
     public void setUp(){
         driver = new DriverFactory().getDriver();
-        driver.get(BasePage.baseUrl() + "/food/broccoli");
+        driver.get(BasePage.baseUrl() + new PropertyReader().readProperty("ingredientspage"));
     }
 
     @After

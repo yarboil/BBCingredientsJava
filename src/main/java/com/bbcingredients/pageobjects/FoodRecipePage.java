@@ -34,7 +34,6 @@ public class FoodRecipePage {
     public WebElement buyersGuide;
 
     public void clickYourFavouritesButton(){
-        System.out.print("helllllllooooooooooooooooooooooooooooooooooooooooo");
         System.out.println(favouritesButton);
         System.out.println(favouritesButton.get(5).getText());
     }

@@ -12,6 +12,5 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/cucumber", "junit:target/reports/junit_report.xml"},
         snippets = SnippetType.CAMELCASE
 )
-public class RunCucumberTests {
-
+public class RunCucumberTest {
 }
