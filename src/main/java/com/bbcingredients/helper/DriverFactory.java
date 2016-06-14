@@ -1,7 +1,9 @@
 package com.bbcingredients.helper;
 
 
+import com.bbcingredients.util.PropertyReader;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
@@ -19,7 +21,14 @@ public class DriverFactory {
     }
 
     private void createNewDriverInstance(){
-        driver = new FirefoxDriver();
+        String browser = new PropertyReader().readProperty("browser");
+        if(browser.equals("firefox")){
+            driver = new FirefoxDriver();
+        }else if(browser.equals("chrome")){
+            driver = new ChromeDriver();
+        }else{
+            System.out.println("Cannot read browser type");
+        }
     }
 
     public WebDriver getDriver(){
@@ -30,5 +39,4 @@ public class DriverFactory {
         driver.quit();
         driver = null;
     }
-
 }
