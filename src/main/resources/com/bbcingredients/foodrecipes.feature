@@ -17,7 +17,6 @@ Feature: Food Recipes
     When I click your favourites button
     Then I should see recipe in favourites
 
-  @run-test
   Scenario: Remove from favourites
     Given I am logged in
     And I am on Food recipe page

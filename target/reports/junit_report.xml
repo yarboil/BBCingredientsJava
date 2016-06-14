@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="48.646672">
+<testcase classname="Food Recipes" name="Add to favourites" time="48.646672">
+<system-out><![CDATA[Given I am logged in........................................................passed
+And I am on Food recipe page................................................passed
+When I click add to favourites..............................................passed
+]]></system-out>
+</testcase>
+</testsuite>

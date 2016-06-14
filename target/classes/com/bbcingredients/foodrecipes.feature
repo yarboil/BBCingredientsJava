@@ -8,16 +8,15 @@ Feature: Food Recipes
     And I click first filter in search results
     When I click first checkbox recipe
     Then I should see recipe in results
-
+  @run
   Scenario: Add to favourites
     Given I am logged in
     And I am on Food recipe page
     When I click add to favourites
-    Then I should see "Added to favourites"
-    When I click your favourites button
-    Then I should see recipe in favourites
+#    Then I should see "Added to favourites"
+#    When I click your favourites button
+#    Then I should see recipe in favourites
 
-  @run-test
   Scenario: Remove from favourites
     Given I am logged in
     And I am on Food recipe page

@@ -4,13 +4,9 @@ Feature: Login Page
   I want to view the page
   So I can login into the site
 
-  Scenario Outline: Login
+  Scenario: Login
     Given I am on signin page
-    When I enter "<username>" and "<password>"
+    When I enter "username" and "password"
     And I click signin
     And I click continue
     Then I should be signed in
-
-    Examples:
-    |username|password|
-    |testtestuser@hotmail.com|Abc123|

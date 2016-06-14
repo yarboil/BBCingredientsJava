@@ -1,6 +1,9 @@
 package com.bbcingredients.steps;
 
+import com.bbcingredients.helper.BasePage;
+import com.bbcingredients.helper.DriverFactory;
 import com.bbcingredients.pageobjects.LoginPage;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
@@ -8,23 +11,19 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class LoginPageSteps {
 
-    WebDriver driver = new FirefoxDriver();
-    LoginPage loginPage = new LoginPage(driver);
+    WebDriver driver;
 
-    @Given("^I am on signin page$")
-    public void iAmOnSigninPage() throws Throwable {
-        loginPage.navigateToLoginPage();
-        loginPage.waitForVisibility(loginPage.aboutbbcid);
+    @Before
+    public void setUp(){
+       driver = new DriverFactory().getDriver();
     }
 
-    @When("^I enter \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void iEnterAnd(String username, String password) throws Throwable {
-        loginPage.usernameField.sendKeys(username);
-        loginPage.passwordField.sendKeys(password);
-    }
-
-    @When("^I click signin$")
-    public void iClickSignin() throws Throwable {
+    @Given("^I am logged in$")
+    public void iAmLoggedIn() throws Throwable {
+        LoginPage loginPage = new LoginPage(driver);
+        driver.get("https://ssl.bbc.co.uk/id/signin");
+        loginPage.usernameField.sendKeys("testtestuser@hotmail.com");
+        loginPage.passwordField.sendKeys("Abc123");
         loginPage.signinbutton.click();
     }
 

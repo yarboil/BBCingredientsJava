@@ -6,10 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class YourFavouritesPage extends BasePage {
+public class YourFavouritesPage {
+
+    protected WebDriver driver;
 
     public YourFavouritesPage(WebDriver driver){
-        super(driver);
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
