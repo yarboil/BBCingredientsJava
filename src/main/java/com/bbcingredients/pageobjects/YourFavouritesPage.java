@@ -26,4 +26,7 @@ public class YourFavouritesPage {
 
     @FindBy(css = "#add-to-favourites-button")
     public WebElement addToFavouritesButton;
+
+    @FindBy(css = ".my-favourites-recipes.my-favourites-recipes-wrapper.my-favourites-recipes__no-recipes")
+    public WebElement noRecipes;
 }

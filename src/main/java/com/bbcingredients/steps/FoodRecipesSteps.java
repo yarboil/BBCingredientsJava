@@ -22,7 +22,7 @@ public class FoodRecipesSteps {
     @Before
     public void setUp(){
         driver = new DriverFactory().getDriver();
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 40);
     }
 
     @After
@@ -47,7 +47,7 @@ public class FoodRecipesSteps {
 
     @When("^I click add to favourites$")
     public void iClickAddToFavourites() throws Throwable {
-//        wait.until(ExpectedConditions.elementToBeClickable(new FoodRecipePage(driver).addToFavouritesButton));
+//      wait.until(ExpectedConditions.elementToBeClickable(new FoodRecipePage(driver).addToFavouritesButton));
         new FoodRecipePage(driver).addToFavouritesButton.click();
     }
 

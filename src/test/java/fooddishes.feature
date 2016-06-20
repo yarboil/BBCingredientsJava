@@ -12,3 +12,4 @@ Feature: Food Dishes
     Then I should see first accordion open
     When I click second accordion
     Then I should see accordion content
+    

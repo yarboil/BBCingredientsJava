@@ -27,14 +27,13 @@ public class FoodRecipePage {
     @FindBy(css = "button#add-to-favourites-button")
     public WebElement addToFavouritesButton;
 
-    @FindBy(css = "nav.main-menu__navigation.main-menu__navigation--recipes.menu__navigation--shown ul li")
+    @FindBy(css = "nav.main-menu__navigation ul li a")
     public List<WebElement> favouritesButton;
 
     @FindBy(css = "#on-this-page ul li a")
     public WebElement buyersGuide;
 
-    public void clickYourFavouritesButton(){
-        System.out.println(favouritesButton);
-        System.out.println(favouritesButton.get(5).getText());
+    public void clickYourFavouritesButton() throws InterruptedException {
+        favouritesButton.get(11).click();
     }
 }
