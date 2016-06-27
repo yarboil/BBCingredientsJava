@@ -3,6 +3,7 @@ package com.bbcingredients.steps;
 import com.bbcingredients.helper.BasePage;
 import com.bbcingredients.helper.DriverFactory;
 import com.bbcingredients.pageobjects.*;
+import com.bbcingredients.util.PropertyReader;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -16,8 +17,8 @@ import static org.junit.Assert.assertTrue;
 
 public class FoodRecipesSteps {
 
-    WebDriver driver;
-    WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
     @Before
     public void setUp(){
@@ -32,7 +33,7 @@ public class FoodRecipesSteps {
 
     @Given("^I am on Food recipe page$")
     public void iAmOnFoodSearch() throws Throwable {
-        driver.get(BasePage.baseUrl() + "/food/recipes/easy_spaghetti_bolognese_93639");
+        driver.get(BasePage.baseUrl() + new PropertyReader().readProperty("receipespage"));
     }
 
     @When("^I click quick recipe finder first checkbox$")
@@ -47,7 +48,6 @@ public class FoodRecipesSteps {
 
     @When("^I click add to favourites$")
     public void iClickAddToFavourites() throws Throwable {
-//      wait.until(ExpectedConditions.elementToBeClickable(new FoodRecipePage(driver).addToFavouritesButton));
         new FoodRecipePage(driver).addToFavouritesButton.click();
     }
 

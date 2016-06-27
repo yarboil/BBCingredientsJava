@@ -12,9 +12,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class LoginPageSteps {
 
-    WebDriver driver;
-    String username = null;
-    String password = null;
+   private WebDriver driver;
+   private String username = null;
+   private String password = null;
 
     @Before
     public void setUp(){

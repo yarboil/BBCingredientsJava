@@ -17,12 +17,11 @@ import static org.junit.Assert.assertTrue;
 
 public class FoodIngredientsSteps  {
 
-    WebDriver driver;
+    private WebDriver driver;
 
     @Before
     public void setUp(){
         driver = new DriverFactory().getDriver();
-        driver.get(BasePage.baseUrl() + new PropertyReader().readProperty("ingredientspage"));
     }
 
     @After
@@ -32,7 +31,7 @@ public class FoodIngredientsSteps  {
 
     @Given("^I am on food \"([^\"]*)\" page$")
     public void iAmOnFoodPage(String arg1) throws Throwable {
-        driver.get(BasePage.baseUrl() + "/food/broccoli");
+        driver.get(BasePage.baseUrl() + new PropertyReader().readProperty("ingredientspage"));
     }
 
     @Then("^I should see food image$")

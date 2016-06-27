@@ -16,8 +16,8 @@ import static org.junit.Assert.assertTrue;
 
 public class YourFavouritesSteps {
 
-    WebDriver driver;
-    WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
     @Before
     public void setUp(){
