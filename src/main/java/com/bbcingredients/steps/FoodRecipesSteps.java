@@ -61,4 +61,20 @@ public class FoodRecipesSteps {
     public void iClickYourFavouritesButton() throws Throwable {
         new FoodRecipePage(driver).clickYourFavouritesButton();
     }
+
+    @Given("^I have ingredients list$")
+    public void iHaveIngredientsList() throws Throwable {
+        new FoodRecipePage(driver).getIngredientsList();
+    }
+
+    @When("^I navigate to shopping list$")
+    public void iNavigateToShoppingList() throws Throwable {
+        new FoodRecipePage(driver).shoppingList.click();
+    }
+
+    @Then("^I should see ingredients list displayed$")
+    public void iShouldSeeIngredientsListDisplayed() throws Throwable {
+
+    }
+
 }

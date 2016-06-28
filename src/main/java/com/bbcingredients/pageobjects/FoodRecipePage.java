@@ -33,6 +33,18 @@ public class FoodRecipePage {
     @FindBy(css = "#on-this-page ul li a")
     public WebElement buyersGuide;
 
+    @FindBy(css = ".recipe-ingredients__list li ")
+    public List<WebElement> ingredientsList;
+
+    @FindBy(css = "#shopping-list-link.recipe-actions-link")
+    public WebElement shoppingList;
+
+    public void getIngredientsList(){
+        for(WebElement ingredients: ingredientsList){
+            System.out.println(ingredients.getText());
+        }
+    }
+
     public void clickYourFavouritesButton() throws InterruptedException {
         favouritesButton.get(11).click();
     }

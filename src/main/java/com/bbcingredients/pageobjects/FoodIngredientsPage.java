@@ -35,8 +35,4 @@ public class FoodIngredientsPage {
 
     @FindBy(css = "li.with-image")
     public WebElement accordionImage;
-
-    public void waitForContent(){
-        new BasePage(driver).waitForVisibility(content);
-    }
 }

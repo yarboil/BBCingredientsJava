@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java",
         plugin = {"pretty", "html:target/cucumber", "junit:target/reports/junit_report.xml"},
-        snippets = SnippetType.CAMELCASE
+        snippets = SnippetType.CAMELCASE,
+        tags = "@wip"
 )
 public class RunCucumberTest {
 }

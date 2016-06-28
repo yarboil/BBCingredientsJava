@@ -10,6 +10,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertThat;
@@ -18,6 +21,7 @@ import static org.junit.Assert.assertTrue;
 public class FoodIngredientsSteps  {
 
     private WebDriver driver;
+    private WebDriverWait wait;
 
     @Before
     public void setUp(){
@@ -61,7 +65,7 @@ public class FoodIngredientsSteps  {
 
     @Then("^I should see accordion content$")
     public void iShouldSeeAccordionContent() throws Throwable {
-        new FoodIngredientsPage(driver).waitForContent();
         assertTrue(new FoodIngredientsPage(driver).accordionImage.isDisplayed());
     }
+
 }

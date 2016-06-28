@@ -26,3 +26,11 @@ Feature: Food Recipes
     And I click cross button
     And I click remove button
     Then I should see add to favourites button
+
+    @wip
+  Scenario: Shopping List
+    Given I am on Food recipe page
+    And I have ingredients list
+    When I navigate to shopping list
+    Then I should see ingredients list displayed
+

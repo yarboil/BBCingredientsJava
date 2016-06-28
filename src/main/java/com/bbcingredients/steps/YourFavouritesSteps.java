@@ -32,7 +32,7 @@ public class YourFavouritesSteps {
 
     @When("^I click cross button$")
     public void iClickCrossButton() throws Throwable {
-        new BasePage(driver).waitForVisibility(new YourFavouritesPage(driver).crossButton);
+        wait.until(ExpectedConditions.visibilityOf(new YourFavouritesPage(driver).crossButton));
         new YourFavouritesPage(driver).crossButton.click();
     }
 
