@@ -7,11 +7,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class FoodRecipePage {
 
     protected WebDriver driver;
+    static ArrayList<String> ingredientsRecipes = new ArrayList<String>();
 
     public FoodRecipePage(WebDriver driver){
         this.driver = driver;
@@ -34,15 +38,21 @@ public class FoodRecipePage {
     public WebElement buyersGuide;
 
     @FindBy(css = ".recipe-ingredients__list li ")
-    public List<WebElement> ingredientsList;
+    public  List<WebElement> ingredientsList;
 
     @FindBy(css = "#shopping-list-link.recipe-actions-link")
     public WebElement shoppingList;
 
-    public void getIngredientsList(){
+    public List getIngredientsList(){
         for(WebElement ingredients: ingredientsList){
-            System.out.println(ingredients.getText());
+            ingredientsRecipes.add(ingredients.getText());
         }
+        Collections.sort(ingredientsRecipes);
+        return ingredientsRecipes;
+    }
+
+    public static List getIngredients(){
+        return ingredientsRecipes;
     }
 
     public void clickYourFavouritesButton() throws InterruptedException {

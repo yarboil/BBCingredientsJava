@@ -71,10 +71,4 @@ public class FoodRecipesSteps {
     public void iNavigateToShoppingList() throws Throwable {
         new FoodRecipePage(driver).shoppingList.click();
     }
-
-    @Then("^I should see ingredients list displayed$")
-    public void iShouldSeeIngredientsListDisplayed() throws Throwable {
-
-    }
-
 }
