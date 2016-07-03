@@ -1,6 +1,7 @@
 package com.bbcingredients.pageobjects;
 
 import com.bbcingredients.helper.BasePage;
+import com.sun.tracing.dtrace.FunctionName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,4 +36,13 @@ public class FoodIngredientsPage {
 
     @FindBy(css = "li.with-image")
     public WebElement accordionImage;
+
+    @FindBy(css = "img.recipes-image")
+    public WebElement mobileFoodImage;
+
+    @FindBy(css = "div#header.module.with-more p")
+    public WebElement mobileFoodAuthor;
+
+    @FindBy(css = "div#header.module.with-more a")
+    public WebElement mobileFoodCaption;
 }
