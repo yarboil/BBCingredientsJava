@@ -9,6 +9,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,15 +21,27 @@ public class FoodRecipesSteps {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    @Before
+    @Before("@browser")
     public void setUp(){
         driver = new DriverFactory().getDriver();
         wait = new WebDriverWait(driver, 40);
     }
 
+    @Before("@mobile")
+    public void mobileSetup(){
+        driver = new DriverFactory().getMobileDriver();
+        wait = new WebDriverWait(driver, 40);
+    }
+
     @After
     public void tearDown(){
-        new DriverFactory().destoryDriver();
+        new DriverFactory().destroyDriver();
+    }
+
+    @Given("^I am on a desktop$")
+    public void iAmOnADesktop() throws Throwable {
+        driver = new DriverFactory().getDriver();
+        wait = new WebDriverWait(driver, 40);
     }
 
     @Given("^I am on Food recipe page$")

@@ -9,18 +9,22 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPageSteps {
 
-   private WebDriver driver;
-   private String username = null;
-   private String password = null;
+    private WebDriver driver;
+    private String username = new PropertyReader().readProperty("username");
+    private String password = new PropertyReader().readProperty("password");
 
-    @Before
+    @Before("@browser")
     public void setUp(){
-       driver = new DriverFactory().getDriver();
-       username = new PropertyReader().readProperty("username");
-       password = new PropertyReader().readProperty("password");
+        driver = new DriverFactory().getDriver();
+    }
+
+    @Before("@mobile")
+    public void mobileSetup(){
+        driver = new DriverFactory().getMobileDriver();
     }
 
     @Given("^I am logged in$")

@@ -6,6 +6,7 @@ import com.bbcingredients.pageobjects.FoodRecipePage;
 import com.bbcingredients.pageobjects.YourFavouritesPage;
 import cucumber.api.PendingException;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
@@ -19,10 +20,16 @@ public class YourFavouritesSteps {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    @Before
+    @Before("@browser")
     public void setUp(){
         driver = new DriverFactory().getDriver();
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 40);
+    }
+
+    @Before("@mobile")
+    public void mobileSetup(){
+        driver = new DriverFactory().getMobileDriver();
+        wait = new WebDriverWait(driver, 40);
     }
 
     @Then("^I should see recipe in favourites$")

@@ -4,12 +4,15 @@ import com.bbcingredients.helper.BasePage;
 import com.bbcingredients.helper.DriverFactory;
 import com.bbcingredients.pageobjects.*;
 import com.bbcingredients.util.PropertyReader;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,19 +21,28 @@ import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class FoodIngredientsSteps  {
+public class FoodIngredientsSteps{
 
     private WebDriver driver;
-    private WebDriverWait wait;
 
-    @Before
+    @Before("@browser")
     public void setUp(){
         driver = new DriverFactory().getDriver();
     }
 
+    @Before("@mobile")
+    public void mobileSetup(){
+        driver = new DriverFactory().getMobileDriver();
+    }
+
     @After
     public void tearDown(){
-        new DriverFactory().destoryDriver();
+        new DriverFactory().destroyDriver();
+    }
+
+    @Given("^I am on a mobile device$")
+    public void iAmOnAMobileDevice() throws Throwable {
+        driver = new DriverFactory().getMobileDriver();
     }
 
     @Given("^I am on food \"([^\"]*)\" page$")
@@ -68,4 +80,18 @@ public class FoodIngredientsSteps  {
         assertTrue(new FoodIngredientsPage(driver).accordionImage.isDisplayed());
     }
 
+    @Then("^I should see mobile food image$")
+    public void iShouldSeeMobileFoodImage() throws Throwable {
+        assertTrue(new FoodIngredientsPage(driver).mobileFoodImage.isDisplayed());
+    }
+
+    @Then("^I should see mobile food author$")
+    public void iShouldSeeMobileFoodAuthor() throws Throwable {
+        assertTrue(new FoodIngredientsPage(driver).mobileFoodAuthor.isDisplayed());
+    }
+
+    @Then("^I should see mobile food caption$")
+    public void iShouldSeeMobileFoodCaption() throws Throwable {
+        assertTrue(new FoodIngredientsPage(driver).mobileFoodCaption.isDisplayed());
+    }
 }
