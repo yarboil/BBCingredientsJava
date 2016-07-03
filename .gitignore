@@ -14,6 +14,7 @@
 target/*
 .DS_Store
 BBCingredients.iml
+src/test/java/com/bbcingredients/reports
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
@@ -28,8 +29,7 @@ BBCingredients.iml
 # IntelliJ
 /out/
 
-### Intellij Patch ###
-# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
-
 # *.iml
 # modules.xml
+java/
+target/
