@@ -6,6 +6,8 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
+
 public class AppiumSetup {
 
     private DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -13,12 +15,13 @@ public class AppiumSetup {
 
     {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
+        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
-        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "100");
-        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "60");
-        capabilities.setCapability(MobileCapabilityType.AUTO_WEBVIEW, "true");
+    }
 
+    public AppiumSetup(){
+        startService();
     }
 
     public DesiredCapabilities getCapabilities(){
@@ -33,6 +36,5 @@ public class AppiumSetup {
         if(service.isRunning()){
             service.stop();
         }
-
     }
 }
