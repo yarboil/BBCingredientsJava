@@ -18,30 +18,12 @@ import static org.junit.Assert.assertTrue;
 
 public class FoodRecipesSteps {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
-
-    @Before("@browser")
-    public void setUp(){
-        driver = new DriverFactory().getDriver();
-        wait = new WebDriverWait(driver, 40);
-    }
-
-    @Before("@mobile")
-    public void mobileSetup(){
-        driver = new DriverFactory().getMobileDriver();
-        wait = new WebDriverWait(driver, 40);
-    }
+    private WebDriver driver = new DriverFactory().getDriver();
+    private WebDriverWait wait = new WebDriverWait(driver, 40);
 
     @After
     public void tearDown(){
         new DriverFactory().destroyDriver();
-    }
-
-    @Given("^I am on a desktop$")
-    public void iAmOnADesktop() throws Throwable {
-        driver = new DriverFactory().getDriver();
-        wait = new WebDriverWait(driver, 40);
     }
 
     @Given("^I am on Food recipe page$")

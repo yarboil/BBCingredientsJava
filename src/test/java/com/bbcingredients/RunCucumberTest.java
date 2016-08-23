@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/java",
         plugin = {"pretty", "html:src/test/java/com/bbcingredients/reports", "junit:java/com/reports/junit_report.xml"},
         snippets = SnippetType.CAMELCASE,
-        tags = "@mobile"
+        tags = "@browser"
 )
 public class RunCucumberTest {
 }

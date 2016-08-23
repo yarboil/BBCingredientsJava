@@ -23,26 +23,11 @@ import static org.junit.Assert.assertTrue;
 
 public class FoodIngredientsSteps{
 
-    private WebDriver driver;
-
-    @Before("@browser")
-    public void setUp(){
-        driver = new DriverFactory().getDriver();
-    }
-
-    @Before("@mobile")
-    public void mobileSetup(){
-        driver = new DriverFactory().getMobileDriver();
-    }
+    private WebDriver driver = new DriverFactory().getDriver();
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         new DriverFactory().destroyDriver();
-    }
-
-    @Given("^I am on a mobile device$")
-    public void iAmOnAMobileDevice() throws Throwable {
-        driver = new DriverFactory().getMobileDriver();
     }
 
     @Given("^I am on food \"([^\"]*)\" page$")

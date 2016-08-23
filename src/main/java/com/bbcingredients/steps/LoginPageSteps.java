@@ -13,19 +13,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPageSteps {
 
-    private WebDriver driver;
+    private WebDriver driver = new DriverFactory().getDriver();
     private String username = new PropertyReader().readProperty("username");
     private String password = new PropertyReader().readProperty("password");
-
-    @Before("@browser")
-    public void setUp(){
-        driver = new DriverFactory().getDriver();
-    }
-
-    @Before("@mobile")
-    public void mobileSetup(){
-        driver = new DriverFactory().getMobileDriver();
-    }
 
     @Given("^I am logged in$")
     public void iAmLoggedIn() throws Throwable {

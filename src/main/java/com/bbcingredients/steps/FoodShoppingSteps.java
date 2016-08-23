@@ -14,12 +14,7 @@ import static org.junit.Assert.*;
 
 public class FoodShoppingSteps {
 
-    private WebDriver driver;
-
-    @Before("@browser")
-    public void setUp(){
-        driver = new DriverFactory().getDriver();
-    }
+    private WebDriver driver = new DriverFactory().getDriver();
 
     @Then("^I should see ingredients list displayed$")
     public void iShouldSeeIngredientsListDisplayed() throws Throwable {
