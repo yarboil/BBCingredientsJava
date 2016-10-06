@@ -24,12 +24,10 @@ src/test/java/com/bbcingredients/reports
 .idea/dynamic.xml
 .idea/uiDesigner.xml
 
-## Plugin-specific files:
-
 # IntelliJ
 /out/
 
 # *.iml
 # modules.xml
-java/
+.idea
 target/
