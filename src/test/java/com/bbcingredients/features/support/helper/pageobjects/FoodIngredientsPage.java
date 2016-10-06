@@ -1,5 +1,6 @@
 package com.bbcingredients.features.support.helper.pageobjects;
 
+import io.appium.java_client.pagefactory.OverrideWidget;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,10 +18,12 @@ public class FoodIngredientsPage extends LoadableComponent <FoodIngredientsPage>
         PageFactory.initElements(driver,this);
     }
 
+    @Override
     public void load(){
         driver.get("https://www.bbc.com/food/broccoli");
     }
 
+    @Override
     public void isLoaded() throws Error{
        assertTrue(driver.getCurrentUrl().contains("food"));
     }

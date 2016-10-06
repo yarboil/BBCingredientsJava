@@ -22,10 +22,12 @@ public class FoodRecipePage extends LoadableComponent <FoodRecipePage> {
         PageFactory.initElements(driver, this);
     }
 
+    @Override
     protected void load() {
         driver.get("http://www.bbc.co.uk/food/recipes/easy_spaghetti_bolognese_93639");
     }
 
+    @Override
     protected void isLoaded() throws Error {
         assertTrue(driver.getCurrentUrl().contains("recipes"));
     }
