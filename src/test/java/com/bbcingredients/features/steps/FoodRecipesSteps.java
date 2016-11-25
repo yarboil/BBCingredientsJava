@@ -2,7 +2,6 @@ package com.bbcingredients.features.steps;
 
 import com.bbcingredients.features.support.helper.DriverFactory;
 import com.bbcingredients.features.support.helper.pageobjects.*;
-import com.bbcingredients.features.support.helper.util.CommonComponents;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;

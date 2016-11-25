@@ -1,6 +1,5 @@
 package com.bbcingredients.features.support.helper.pageobjects;
 
-import io.appium.java_client.pagefactory.OverrideWidget;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
