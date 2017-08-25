@@ -18,15 +18,6 @@ import java.util.concurrent.Executors;
         snippets = SnippetType.CAMELCASE
 )
 
-public class RunCucumberTest extends Thread{
-    
-    public void run(){
-        System.out.println("Creating Thread ...");
-        new BrowserStack().setUpLocalServer();
-        try {
-            new RunCucumberTest().join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+public class RunCucumberTest{
+
 }

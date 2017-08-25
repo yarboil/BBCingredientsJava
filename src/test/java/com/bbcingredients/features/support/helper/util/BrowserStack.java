@@ -43,6 +43,7 @@ public class BrowserStack {
     public void setUpLocalServer(){
         String browserStackBinary = "src/test/java/com/bbcingredients/features/support/helper/browserstack/BrowserStackLocal --force " + automateKey;
         ExecuteShell.executeCommand(browserStackBinary);
+        System.out.print("helo you");
     }
 
     public String getUrl(){
